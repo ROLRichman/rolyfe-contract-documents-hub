@@ -1,1 +1,206 @@
+*{box-sizing:border-box}
 
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:#fff;
+  background:
+    radial-gradient(circle at top,#123524 0,#020617 38%,#000 100%);
+}
+
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    linear-gradient(rgba(2,6,23,.82),rgba(2,6,23,.92)),
+    url("rolyfe-documents-cover.png") center/cover no-repeat;
+  z-index:-2;
+}
+
+body:after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:linear-gradient(120deg,transparent 0%,rgba(34,197,94,.08) 45%,transparent 70%);
+  animation:bgGlare 5s infinite linear;
+  z-index:-1;
+}
+
+@keyframes bgGlare{
+  from{transform:translateX(-100%)}
+  to{transform:translateX(100%)}
+}
+
+.wrap{
+  max-width:980px;
+  margin:auto;
+  padding:16px;
+}
+
+.hero{
+  text-align:center;
+  padding:18px 0;
+}
+
+.hero h1{
+  font-size:34px;
+  margin:8px 0;
+  text-shadow:0 0 28px rgba(34,197,94,.45);
+}
+
+.hero p{
+  color:#d1d5db;
+  font-size:16px;
+}
+
+.hero img{
+  width:100%;
+  max-height:560px;
+  object-fit:cover;
+  border-radius:24px;
+  box-shadow:0 0 45px rgba(34,197,94,.35);
+  border:1px solid rgba(34,197,94,.35);
+}
+
+.card{
+  background:rgba(15,23,42,.92);
+  border:1px solid rgba(34,197,94,.35);
+  border-radius:22px;
+  padding:18px;
+  margin:18px 0;
+  box-shadow:0 14px 32px rgba(0,0,0,.45);
+  backdrop-filter:blur(8px);
+}
+
+.card h2{
+  margin-top:0;
+  font-size:24px;
+}
+
+.intro{
+  background:linear-gradient(135deg,rgba(15,23,42,.95),rgba(5,46,26,.95));
+}
+
+.small{
+  color:#d1d5db;
+  line-height:1.5;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:12px;
+  margin-top:14px;
+}
+
+.btn{
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:58px;
+  padding:14px;
+  border-radius:16px;
+  color:#fff;
+  text-align:center;
+  text-decoration:none;
+  font-weight:800;
+  background:linear-gradient(135deg,#22c55e,#15803d);
+  box-shadow:0 0 22px rgba(34,197,94,.35);
+  transition:.2s;
+}
+
+.btn:hover{
+  transform:translateY(-3px) scale(1.01);
+  box-shadow:0 0 34px rgba(34,197,94,.65);
+}
+
+.btn:before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-120%;
+  width:50%;
+  height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);
+  transform:skewX(-20deg);
+  animation:buttonGlare 2.7s infinite;
+}
+
+@keyframes buttonGlare{
+  0%{left:-120%}
+  55%{left:130%}
+  100%{left:130%}
+}
+
+.gold{
+  background:linear-gradient(135deg,#f59e0b,#facc15);
+  color:#111;
+}
+
+.blue{
+  background:linear-gradient(135deg,#2563eb,#38bdf8);
+}
+
+details{
+  background:rgba(2,6,23,.75);
+  border:1px solid rgba(34,197,94,.45);
+  border-radius:18px;
+  padding:14px;
+}
+
+summary{
+  font-size:22px;
+  font-weight:900;
+  cursor:pointer;
+}
+
+.video,.iframe-wrap{
+  width:100%;
+  overflow:hidden;
+  border-radius:18px;
+  background:#fff;
+  border:1px solid rgba(255,255,255,.15);
+}
+
+.video{
+  aspect-ratio:16/9;
+}
+
+.video iframe{
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+.iframe-wrap{
+  height:620px;
+}
+
+.iframe-wrap iframe{
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+footer{
+  text-align:center;
+  color:#d1d5db;
+  padding:30px 10px 50px;
+  line-height:1.6;
+}
+
+footer b{
+  color:#22c55e;
+}
+
+@media(max-width:520px){
+  .wrap{padding:12px}
+  .hero h1{font-size:27px}
+  .card{padding:15px;border-radius:18px}
+  .grid{grid-template-columns:1fr}
+  summary{font-size:19px}
+  .iframe-wrap{height:560px}
+}
