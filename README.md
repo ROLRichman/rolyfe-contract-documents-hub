@@ -28,7 +28,7 @@ Review → Select Document → Sign / Upload → Submit → Close
 ## Built By
 
 Richardson L.  
-Root Of Lyfe Holdings LLC  
+Root Of Lyfe LLC  
 Private Capital Broker  
 richman@rootoflyfe.com
 
